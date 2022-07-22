@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-Events</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- first form of Onclick-->
+
+    <!-- <div id="demo">Assalam-o-Alaikum</div>
+    <button onclick="myFun()">Click to Print</button> -->
+
+    <!-- second form is inline onclick function-->
+    <!-- <button onclick='alert("Assalam o alaikum everyone!")'>Click Now</button> -->
+    <!-- while writing inline onclick function we will not use parenthesis () -->
+    
+    <!-- Third form of onclick() -->
+    <!-- <button id="result">Click Me</button>
+    <h1>Your Result will print here: &nbsp; <span id="print"></span></h1>   -->
+<!-- ----------------------------Onclick demo ends here----------------------------------------- -->
+
+    <!-- Now (addEventListener) will start from here  -->
+    <!-- No.1 is click -->
+     <!-- <button id="demo">Click Me</button>   
+     <p>your Selected text is :-  &nbsp; <span id="place"></span></p> -->
+
+    <!-- No.2 is "change" -->
+    <label> Choose a City
+        <select id="city" name="city">
+            <option value="Depalpur">Depalpur</option>
+            <option value="Okara">Okara</option>
+            <option value="Lahore">Lahore</option>
+            <option value="Multan">Multan</option>
+            <option value="Faisalabad">Faisalabad</option>
+        </select>
+    </label>
+        <p>your Selected City is :-  &nbsp; <span id="get"></span></p>
+        
+    <br /> 
+      <hr />
+
+      <!-- No.3 is "mouseOver" -->
+
+      <!-- No.4 is "focus" -->
+
+      <!-- No.5 is "resize" -->
+      
+      <!-- No.6 is "keypress" -->
+
+  </body>
+  <script>
+    // first form of Onclick
+    /*  function myFun() {
+        document.getElementById('demo').innerHTML="Hello EveryOne!"
+    }
+ */
+    // Third form of onclick function
+  /*
+    var result = document.getElementById('result');
+    result.onclick = function() {
+       var print = prompt("Salam everyone! you are welcome here.Enter your name below: ");
+       document.getElementById('print').innerHTML=print;
+    } ;
+    */
+// -----------------------------------------------------------------
+    // Now addEventListener will start from here 
+    // No.1 result.................
+    // click() eventType is used for just button actions..........
+  /* 
+    var position = document.getElementById('demo');
+    position.addEventListener ('click', function(){
+       var pos= prompt("Salam everyone! you are welcome here.Enter your name below: "); 
+       document.getElementById('place').innerHTML = pos;
+    }); 
+*/
+
+ // No.2 result.................
+ var sm = document.getElementById('city');
+city.addEventListener("change", function() {
+     var val = document.getElementById('city').value;
+     document.getElementById('get').innerHTML = val;
+ })
+
+  </script>
+</html>
