@@ -16,40 +16,69 @@
     <!-- second form is inline onclick function-->
     <!-- <button onclick='alert("Assalam o alaikum everyone!")'>Click Now</button> -->
     <!-- while writing inline onclick function we will not use parenthesis () -->
-    
+
     <!-- Third form of onclick() -->
     <!-- <button id="result">Click Me</button>
     <h1>Your Result will print here: &nbsp; <span id="print"></span></h1>   -->
-<!-- ----------------------------Onclick demo ends here----------------------------------------- -->
+    <!-- ----------------------------Onclick demo ends here----------------------------------------- -->
 
     <!-- Now (addEventListener) will start from here  -->
     <!-- No.1 is click -->
-     <!-- <button id="demo">Click Me</button>   
-     <p>your Selected text is :-  &nbsp; <span id="place"></span></p> -->
+    <button id="demo">Click Me</button>
+    <p>your Selected text is :- &nbsp; <span id="place"></span></p>
 
     <!-- No.2 is "change" -->
-    <label> Choose a City
-        <select id="city" name="city">
-            <option value="Depalpur">Depalpur</option>
-            <option value="Okara">Okara</option>
-            <option value="Lahore">Lahore</option>
-            <option value="Multan">Multan</option>
-            <option value="Faisalabad">Faisalabad</option>
-        </select>
+    <label>
+      Choose a City
+      <select id="city" name="city">
+        <option value="Depalpur">Depalpur</option>
+        <option value="Okara">Okara</option>
+        <option value="Lahore">Lahore</option>
+        <option value="Multan">Multan</option>
+        <option value="Faisalabad">Faisalabad</option>
+      </select>
     </label>
-        <p>your Selected City is :-  &nbsp; <span id="get"></span></p>
-        
-    <br /> 
-      <hr />
+    <p>your Selected City is :- &nbsp; <span id="get"></span></p>
 
-      <!-- No.3 is "mouseOver" -->
+    <br />
+    <hr />
 
-      <!-- No.4 is "focus" -->
+    <!-- No.3 is "mouseOver" -->
+    <span id="mouseover">your Selected text will change on mouse hover effect</span
+    >
+    <br />
+    <hr />
+    <!-- No.4 is "focus" -->
+    <textarea
+      id="menu"
+      placeholder="Let's focus here and see the changings..... "
+    ></textarea>
+    <br />
+    <hr />
 
-      <!-- No.5 is "resize" -->
-      
-      <!-- No.6 is "keypress" -->
+    <!-- No.5 is "keypress" eventType works on windows specially -->
+    <textarea id="key" placeholder="Enter your desired text here..."></textarea>
 
+    <p>Your entered text: &nbsp; <span id="save"></span></p>
+    <br />
+    <hr />
+
+    <!-- No.6 is "blur" -->
+    <textarea
+      name="blr"
+      id="blr"
+      placeholder="When you click here its properties/color will changed..."
+    ></textarea>
+    <br />
+    <hr />
+
+    <!-- No.7 is "resize" eventType works on windows specially -->
+    <p id="width">Here will be printed the width of Window (innerWidth):</p>
+    <p id="height">Here will be printed the height of Window (innerHeight):</p>
+
+    <p class="para">You will see the width and height of the window above mentioned...</p>
+  <br>  
+  
   </body>
   <script>
     // first form of Onclick
@@ -58,31 +87,74 @@
     }
  */
     // Third form of onclick function
-  /*
+    /*
     var result = document.getElementById('result');
     result.onclick = function() {
        var print = prompt("Salam everyone! you are welcome here.Enter your name below: ");
        document.getElementById('print').innerHTML=print;
     } ;
     */
-// -----------------------------------------------------------------
-    // Now addEventListener will start from here 
+    // -----------------------------------------------------------------
+    // Now addEventListener will start from here
     // No.1 result.................
     // click() eventType is used for just button actions..........
-  /* 
-    var position = document.getElementById('demo');
-    position.addEventListener ('click', function(){
-       var pos= prompt("Salam everyone! you are welcome here.Enter your name below: "); 
-       document.getElementById('place').innerHTML = pos;
-    }); 
-*/
 
- // No.2 result.................
- var sm = document.getElementById('city');
-city.addEventListener("change", function() {
-     var val = document.getElementById('city').value;
-     document.getElementById('get').innerHTML = val;
- })
+    var position = document.getElementById("demo");
+    position.addEventListener("click", function () {
+      var pos = prompt("Salam everyone! you are welcome here.Enter your name below: "
+      );
+      document.getElementById("place").innerHTML = pos;
+    });
+
+    // No.2 result......................
+    //  "change" is used for <select>, <input> and <textarea>.......
+    var sm = document.getElementById("city");
+    city.addEventListener("change", function () {
+      var val = document.getElementById("city").value;
+      document.getElementById("get").innerHTML = val;
+    });
+
+    //  No.3 results used for text......................
+    var print = document.getElementById("mouseover");
+    print.addEventListener("mouseover", function () {
+      print.innerHTML = "Hello man you have successful done";
+      print.style.background = "green";
+      print.style.color = "white";
+    });
+
+    // No.4 results....focus eventType results...........................
+    var element = document.getElementById("menu");
+    element.addEventListener("focus", function () {
+      element.style.background = "red";
+      element.style.fontWeight = "700";
+      element.style.fontSize = "18px";
+      element.innerHTML = "Hi! I am sabir khan";
+    });
+
+    // No.5 results..........keypress eventType results.....................
+    var sum = document.getElementById("key");
+    sum.addEventListener("keypress", function () {
+      var value = document.getElementById("key").value;
+      document.getElementById("save").innerHTML = value;
+    });
+
+    // No.6 results..........`blur eventType results.....................
+    var mouseKey = document.getElementById("blr");
+    mouseKey.addEventListener("focus", function () {
+      mouseKey.style.background = "coral";
+      mouseKey.style.color = "aqua";
+      mouseKey.style.fontSize = "18px";
+    });
+    mouseKey.addEventListener("blur", function () {
+      mouseKey.style.background = "white";
+      mouseKey.style.color = "black";
+    });
+
+    // No.7 results.......resize eventType results.....................
+    window.addEventListener("resize", function(){
+      window.document.getElementById("width").innerHTML = window.innerWidth;
+      window.document.getElementById("height").innerHTML = window.innerHeight;
+    })
 
   </script>
 </html>

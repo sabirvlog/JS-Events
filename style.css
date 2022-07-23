@@ -14,12 +14,10 @@ button {
     padding: 10px;
     font-size: 17px;
     font-weight: 600;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background: burlywood;
     transition: .5s;
+    display: block;
+    margin: 10px auto;
 }
 button:hover {
     border: 2px solid crimson;
@@ -46,4 +44,63 @@ select {
 label {
     font-size: 17px;
     padding: 0 10px;
+}
+#mouseover {
+    padding: 10px 110px;
+    font-size: 24px;
+    font-weight: bolder;
+    margin: 20px 250px;
+    display: block;
+    text-align: center;
+    background: black;
+    color: white;
+    text-transform: capitalize;
+}
+textarea {
+    display: block;
+    margin: 15px auto;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    padding: 20px;
+    letter-spacing: 1px;
+}
+#key {
+    background: #efd02c;
+    font-size: 18px;
+}
+::placeholder {
+    color: black;
+}
+#width, #height {
+    font-weight: 600;
+    font-size: 17px;
+    margin: auto;
+    color: floralwhite;
+    background: blueviolet;
+    width: 70%;
+    text-align: center;
+    display: block;
+    padding: 8px;
+}
+.para {
+    padding: 10px;
+    text-align: center;
+    background: floralwhite;
+}
+
+@media only screen and (max-width: 770px) 
+{
+    body {
+        background: cyan;
+    }
+    #mouseover {
+        padding: 10px;
+        font-size: 20px;
+        margin: 10px;
+    }
+    select {
+        margin: 15px;
+        width: 70%;
+    }
 }
